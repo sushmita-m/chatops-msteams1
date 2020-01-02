@@ -39,7 +39,7 @@ class RootContext:
             The next layer
         """
         layer = self._next_layer(top_layer)
-        return self.channel.ask("next_layer", layer)
+        return self.channel._ask("next_layer", layer)
 
     def _next_layer(self, top_layer):
         try:

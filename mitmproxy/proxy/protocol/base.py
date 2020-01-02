@@ -163,7 +163,7 @@ class ServerConnectionMixin:
         try:
             self.server_conn.connect()
             self.log("serverconnect", "debug", [repr(self.server_conn.address)])
-            self.channel.ask("serverconnect", self.server_conn)
+            self.channel._ask("serverconnect", self.server_conn)
         except exceptions.TcpException as e:
             raise exceptions.ProtocolException(
                 "Server connection to {} failed: {}".format(
